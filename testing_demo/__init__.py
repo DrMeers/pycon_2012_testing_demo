@@ -71,7 +71,7 @@ class DemoTestCase(TestCase):
         """ Shortcut for creating users """
         params = {
             'username': username,
-            'email': email or get_hash(username),
+            'email': email or (u'%s@example.com' % get_hash(username)),
             'password': password or get_hash(username+'PASSWORD'),
         }
         method = (
